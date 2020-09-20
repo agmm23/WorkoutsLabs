@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="players_training.css">
+
+    <script src="https://kit.fontawesome.com/1401fe14a2.js" crossorigin="anonymous"></script>
+    
+    <title>WorkoutsLabs</title>
+  </head>
+  <body>
+    <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="far fa-futbol mr-2"></i>WorkoutsLabs</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Planificacion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Entrenamientos</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deportistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Comunicaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Scouting</a>
+                </li>
+
+
+
+            </ul>
+            </div>
+        </div>
+      </nav>
+      
+      <!-- ENCABEZADO y SELECCION FECHAS -->
+      <div class="container">
+        <div class="row">
+            <img src="./img/escudo_mallorca.png" alt="" class="escudo col-1">
+            <h3 class="col-3">RCD MALLORCA</h3>
+            <form class="col-8">
+                <div class="form-row mt-2 d-flex justify-content-between">
+                    <div>
+                        <label for="training_date">Fecha</label>
+                        <input id="training_date" type="date">
+                    </div>
+                    <div>
+                        <label for="start_hour">Hora Comienzo</label>
+                        <input id="start_hour" type="time">
+                    </div>
+                    <div>
+                        <label for="end_hour">Hora Fin</label>
+                        <input id="end_hour" type="time">
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01">Lugar</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                          <option selected value="1">Son Moix</option>
+                          <option value="2">Ciudad Deportiva - Cancha Principal</option>
+                          <option value="3">Ciudad Deportiva - Cancha Secundaria</option>
+                        </select>
+                      </div>
+                </div>
+            </form>
+        </div>
+      </div>
+
+      <!-- PLANTEL Y ENTRENAMIENTOS -->
+      
+      <div class="container">
+        <div class="row">
+          <table id="plantel" class="table col-sm-4 table-hover table-sm">
+              <thead>
+                  <th scope="col">No</th>
+                  <th scope="col">Jugador</th>
+                  <th scope="col">Pos</th>
+                  <th scope="col">Stat</th>
+                  <th scope="col">Cond</th>
+                  <th scope="col">Min</th>
+              </thead>
+              <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Garcia, A</td>
+                    <td>Gol</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>Lopez, M</td>
+                    <td>Gol</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">21</th>
+                    <td>Mina, K</td>
+                    <td>Gol</td>
+                    <td>Juv</td>
+                    <td>OK</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Mora, L</td>
+                    <td>Zag</td>
+                    <td>Prof</td>
+                    <td title="Informacion especifica acerca del estado SA">SA</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Martinez, K</td>
+                    <td>Lat</td>
+                    <td>Prof</td>
+                    <td title="Ligamentos cruzados desde 21/06/2020 hasta 31/12/2020">L</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">14</th>
+                    <td>Lomeri, L</td>
+                    <td>Zag</td>
+                    <td>Prof</td>
+                    <td title="Informacion especifica acerca del estado FU">FU</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">32</th>
+                    <td>Gimenez, O</td>
+                    <td>Zag</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Romero P</td>
+                    <td>Zag</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Kolinto M</td>
+                    <td>Lat</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">15</th>
+                    <td>Marin J</td>
+                    <td>Lat</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">22</th>
+                    <td>Gomez H</td>
+                    <td>Lat</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Alonso T</td>
+                    <td>Vol</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Erazo L</td>
+                    <td>Vol</td>
+                    <td>Prof</td>
+                    <td title="Informacion especifica acerca del estado SA">SA</td>
+                    <td>60</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">19</th>
+                    <td>Polino R</td>
+                    <td>Zag</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">16</th>
+                    <td>Robira,S</td>
+                    <td>Vol</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">22</th>
+                    <td>Torrez,R</td>
+                    <td>Vol</td>
+                    <td>Prof</td>
+                    <td title="Informacion especifica acerca del estado SA">SA</td>
+                    <td>60</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">23</th>
+                    <td>Suarez,O</td>
+                    <td>Vol</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Paganini,R</td>
+                    <td>Ext</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Alvarez,R.</td>
+                    <td>Ext</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Zurito,D</td>
+                    <td>Del</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Reyes,L</td>
+                    <td>Del</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">18</th>
+                    <td>Vidal,E</td>
+                    <td>Del</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">25</th>
+                    <td>Hernandez,L</td>
+                    <td>Del</td>
+                    <td>Juv</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">24</th>
+                    <td>Martinez,M</td>
+                    <td>Del</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">17</th>
+                    <td>Gonzalez,E</td>
+                    <td>Ext</td>
+                    <td>Prof</td>
+                    <td>OK</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">18</th>
+                    <td>Perez,F</td>
+                    <td>Ext</td>
+                    <td>Juv</td>
+                    <td>OK</td>
+                    <td>128</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">26</th>
+                    <td>Mautone,F</td>
+                    <td>Lat</td>
+                    <td>Juv</td>
+                    <td title="Informacion especifica acerca del estado AD">AD</td>
+                    <td>0</td>
+                  </tr>
+              </tbody>
+          </table>
+          <div class="row col-sm-8">
+            <div class="card" title="Notas especificas acerca de la actividad">
+                <div class="card-header">
+                    <div class="row mb-1 font-weight-bold font-italic">
+                        <div class="mr-2">1</div>
+                        <div class="mr-2">Movilidad + Coordinacion Mixta</div>
+                        <div>Ej. 051</div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <table class="table-sm table-bordered">
+                            <thead>
+                                <th scope="col">Espacio</th>
+                                <th scope="col">Tiempo</th>
+                                <th scope="col">Repet.</th>
+                                <th scope="col">Desc.R</th>
+                                <th scope="col">Series</th>
+                                <th scope="col">Desc.S</th>
+                                <th scope="col">T.Total</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>L40 x A25</td>
+                                    <td class="text-right">30''</td>
+                                    <td class="text-right">12</td>
+                                    <td class="text-right">10''</td>
+                                    <td class="text-right">3</td>
+                                    <td class="text-right">2'</td>
+                                    <td class="text-right">28'</td>
+                                </tr>
+                            </tbody>         
+                        </table>
+                        <button type="button" class="btn btn-outline-success">Finalizada</button>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <p>Movilidad Articular + Circuito coordinativo en una estacion + Desplazamientos con y sin balon</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <img src="./img/Entrenamiento 1-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+                        <img src="./img/Entrenamiento 1-2.PNG" class="card-img-bottom col-sm-6" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="card" title="Notas especificas acerca de la actividad">
+                <div class="card-header">
+                    <div class="row mb-1 font-weight-bold font-italic">
+                        <div class=mr-2>2A</div>
+                        <div class=mr-2>Esp.Red. con Reconversiones </div>
+                        <div>Ej. 089</div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <table class="table-sm table-bordered">
+                            <thead>
+                                <th scope="col">Espacio</th>
+                                <th scope="col">Tiempo</th>
+                                <th scope="col">Repet.</th>
+                                <th scope="col">Desc.R</th>
+                                <th scope="col">Series</th>
+                                <th scope="col">Desc.S</th>
+                                <th scope="col">T.Total</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>L40 x A25</td>
+                                    <td class="text-right">3'</td>
+                                    <td class="text-right">3</td>
+                                    <td class="text-right">1''</td>
+                                    <td class="text-right">3</td>
+                                    <td class="text-right">2'</td>
+                                    <td class="text-right">37'</td>
+                                </tr>
+                            </tbody>         
+                        </table>
+                        <button type="button" class="btn btn-outline-success">Finalizada</button>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <p>Esp.Red. de posecion con 4 Jug + 4 Apoyos. Se intenta conseguir jugar con los 4 apoyos para lograr 1 Punto y continuar con la posesion para seguir sumando. Si el Eq en recuperacion logra quitar, se invierten los roles. Al finalizar el bloque, un Eq intercambia con el que jugaba de Apoyo.</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <img src="./img/Entrenamiento 2-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="card" title="Notas especificas acerca de la actividad">
+                <div class="card-header">
+                    <div class="row mb-1 font-weight-bold font-italic">
+                        <div class=mr-2>2B</div>
+                        <div class=mr-2>Juego Reducido c/transiciones</div>
+                        <div>Ej. 115</div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <table class="table-sm table-bordered">
+                            <thead>
+                                <th scope="col">Espacio</th>
+                                <th scope="col">Tiempo</th>
+                                <th scope="col">Repet.</th>
+                                <th scope="col">Desc.R</th>
+                                <th scope="col">Series</th>
+                                <th scope="col">Desc.S</th>
+                                <th scope="col">T.Total</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>L40 x A25</td>
+                                    <td class="text-right">7'</td>
+                                    <td class="text-right">2</td>
+                                    <td class="text-right">2'</td>
+                                    <td class="text-right">2</td>
+                                    <td class="text-right">5'</td>
+                                    <td class="text-right">37'</td>
+                                </tr>
+                            </tbody>         
+                        </table>
+                        <button type="button" class="btn btn-outline-success">Finalizada</button>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <p>Dos equipos distribuidos con 4 jug por dentro,2 por afuera y Golero. Inicia un Eq con posecion en la zona donde tienen los Ext, con el Obj de finalizar en el arco. Si el Eq contrario recupera, intenta realizar Trans. Rapida buscando apoyo con un Jug Ext de su Eq, mientras que el otro Ext corre al fondo para recibir y Continuar</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <img src="./img/Entrenamiento 3-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="card" title="Notas especificas acerca de la actividad">
+                <div class="card-header">
+                    <div class="row mb-1 font-weight-bold font-italic">
+                        <div class=mr-2>3</div>
+                        <div class=mr-2>Juego Condicionado c/transiciones </div>
+                        <div>Ej. 100</div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <table class="table-sm table-bordered">
+                            <thead>
+                                <th scope="col">Espacio</th>
+                                <th scope="col">Tiempo</th>
+                                <th scope="col">Repet.</th>
+                                <th scope="col">Desc.R</th>
+                                <th scope="col">Series</th>
+                                <th scope="col">Desc.S</th>
+                                <th scope="col">T.Total</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>L40 x A25</td>
+                                    <td class="text-right">5'</td>
+                                    <td class="text-right">4</td>
+                                    <td class="text-right">2'</td>
+                                    <td class="text-right">1</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">26'</td>
+                                </tr>
+                            </tbody>         
+                        </table>
+                        <button type="button" class="btn btn-outline-success">Finalizada</button>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <p>Un equipo de 10 jug se dispone en ataque combinativo, mientras que el otro equipo defiende el Arco con 8 jug y Golero. El Eq en situacion defensiva, al momento de recuperar el balon intenta una Trans. OF Rapida buscando transitar por uno de los dos Arcos exteriores</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <img src="./img/Entrenamiento 4-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
