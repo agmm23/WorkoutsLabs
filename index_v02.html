@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WorkoutsLabs</title>
+	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>  
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="jugadores.json"></script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="players_training.css">
+	
+	<script src="https://kit.fontawesome.com/1401fe14a2.js" crossorigin="anonymous"></script>
+
+    
+  </head>
+  <body>
+    <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="far fa-futbol mr-2"></i>WorkoutsLabs</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Planificacion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Entrenamientos</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deportistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Comunicaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Scouting</a>
+                </li>
+
+
+
+            </ul>
+            </div>
+        </div>
+      </nav>
+      
+      <!-- ENCABEZADO y SELECCION FECHAS -->
+      <div class="container">
+        <div class="row">
+            <img src="./img/escudo_mallorca.png" alt="" class="escudo col-1">
+            <h3 class="col-3">RCD MALLORCA</h3>
+            <form class="col-8">
+                <div class="form-row mt-2 d-flex justify-content-between">
+                    <div>
+                        <label for="training_date">Fecha</label>
+                        <input id="training_date" type="date" value="2020-09-21">
+                    </div>
+                    <div>
+                        <label for="start_hour">Hora Comienzo</label>
+                        <input id="start_hour" type="time">
+                    </div>
+                    <div>
+                        <label for="end_hour">Hora Fin</label>
+                        <input id="end_hour" type="time">
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01">Lugar</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                          <option selected value="1">Son Moix</option>
+                          <option value="2">Ciudad Deportiva - Cancha Principal</option>
+                          <option value="3">Ciudad Deportiva - Cancha Secundaria</option>
+                        </select>
+                      </div>
+                </div>
+            </form>
+        </div>
+	  </div>
+	  
+	  
+	<div class="example-parent">
+		<div id="jug" class="example-origin" ondragover="onDragOver(event);" ondrop="onDrop(event);">	
+			<div class="header">
+				PLANTEL
+			</div>
+			<div id="jug-0" class="header" style="padding: 0px; cursor:pointer;">
+				<table id="jug-0" align="center" width = "100%">
+					<tr>
+						<td id="jug-0" width="50%">JUGADOR</td>
+						<td id="jug-0" width="10%">No</td>
+						<td id="jug-0" width="10%">Pos</td>
+						<td id="jug-0" width="10%">Status</td>
+						<td id="jug-0" width="10%">Cond</td>
+						<td id="jug-0" width="10%">Min</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-1" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-1" align="center" width = "100%">
+					<tr>
+						<td id="jug-1" width="5%">1</td>
+						<td id="jug-1" width="15%"><img id="jug-1" src="iconoPersona.jpg"></td>
+						<td id="jug-1" width="30%" style="text-align: left;"><b>Garcia, A.</b></td>
+						<td id="jug-1" width="10%">1</td>
+						<td id="jug-1" width="10%">Gol</td>
+						<td id="jug-1" width="10%">Prof.</td>
+						<td id="jug-1" width="10%">OK</td>
+						<td id="jug-1" width="10%">100</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-2" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-2" align="center" width = "100%">
+					<tr>
+						<td id="jug-2" width="5%">2</td>
+						<td id="jug-2" width="15%"><img id="jug-2" src="iconoPersona.jpg"></td>
+						<td id="jug-2" width="30%"style="text-align: left;"><b>Lopez, M.</b></td>
+						<td id="jug-2" width="10%">12</td>
+						<td id="jug-2" width="10%">Gol</td>
+						<td id="jug-2" width="10%">Prof.</td>
+						<td id="jug-2" width="10%">OK</td>
+						<td id="jug-2" width="10%">90</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-3" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+					<table id="jug-3" align="center" width = "100%">
+						<tr>
+							<td id="jug-3" width="5%">3</td>
+							<td id="jug-3" width="15%"><img id="jug-3" src="iconoPersona.jpg"></td>
+							<td id="jug-3" width="30%" style="text-align: left;"><b>Mina, K.</b></td>
+							<td id="jug-3" width="10%">21</td>
+							<td id="jug-3" width="10%">Gol</td>
+							<td id="jug-3" width="10%">Juv.</td>
+							<td id="jug-3" width="10%">OK</td>
+							<td id="jug-3" width="10%">90</td>
+						</tr>
+					</table>
+			</div>
+			<div id="jug-4" class="example-draggable" style="background-color: #FFCC00;" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-4" align="center" width = "100%">
+					<tr>
+						<td id="jug-4" width="5%">4</td>
+						<td id="jug-4" width="15%"><img id="jug-4" src="iconoPersona.jpg"></td>
+						<td id="jug-4" width="30%" style="text-align: left;"><b>Mora, L.</b></td>
+						<td id="jug-4" width="10%">2</td>
+						<td id="jug-4" width="10%">Zag</td>
+						<td id="jug-4" width="10%">Prof.</td>
+						<td id="jug-4" width="10%"">SA</td>
+						<td id="jug-4" width="10%">45</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-5" class="example-draggable" style="background-color: #FF9999;" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-5" align="center" width = "100%">
+					<tr>
+						<td id="jug-5" width="5%">5</td>
+						<td id="jug-5" width="15%"><img id="jug-5" src="iconoPersona.jpg"></td>
+						<td id="jug-5" width="30%" style="text-align: left;"><b>Martinez, K.</b></td>
+						<td id="jug-5" width="10%">4</td>
+						<td id="jug-5" width="10%">Lat</td>
+						<td id="jug-5" width="10%">Prof.</td>
+						<td id="jug-5" width="10%">L</td>
+						<td id="jug-5" width="10%">0</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-6" class="example-draggable" style="background-color: #FFFF00;" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-6" align="center" width = "100%">
+					<tr>
+						<td id="jug-6" width="5%">6</td>
+						<td id="jug-6" width="15%"><img id="jug-6" src="iconoPersona.jpg"></td>
+						<td id="jug-6" width="30%" style="text-align: left;"><b>Lomeri, L.</b></td>
+						<td id="jug-6" width="10%">14</td>
+						<td id="jug-6" width="10%">Zag</td>
+						<td id="jug-6" width="10%">Prof.</td>
+						<td id="jug-6" width="10%">FU</td>
+						<td id="jug-6" width="10%">-</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-7" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-7" align="center" width = "100%">
+					<tr>
+						<td id="jug-7" width="5%">7</td>
+						<td id="jug-7" width="15%"><img id="jug-7" src="iconoPersona.jpg"></td>
+						<td id="jug-7" width="30%" style="text-align: left;"><b>Gimenez, O.</b></td>
+						<td id="jug-7" width="10%">32</td>
+						<td id="jug-7" width="10%">Zag</td>
+						<td id="jug-7" width="10%">Prof.</td>
+						<td id="jug-7" width="10%">OK</td>
+						<td id="jug-7" width="10%">100</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-8" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-8" align="center" width = "100%">
+					<tr>
+						<td id="jug-8" width="5%">8</td>
+						<td id="jug-8" width="15%"><img id="jug-8" src="iconoPersona.jpg"></td>
+						<td id="jug-8" width="30%" style="text-align: left;"><b>Romero, P.</b></td>
+						<td id="jug-8" width="10%">3</td>
+						<td id="jug-8" width="10%">Zag</td>
+						<td id="jug-8" width="10%">Prof.</td>
+						<td id="jug-8" width="10%">OK</td>
+						<td id="jug-8" width="10%">100</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-9" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-9" align="center" width = "100%">
+					<tr>
+						<td id="jug-9" width="5%">9</td>
+						<td id="jug-9" width="15%"><img id="jug-9" src="iconoPersona.jpg"></td>
+						<td id="jug-9" width="30%" style="text-align: left;"><b>Kolinto, M.</b></td>
+						<td id="jug-9" width="10%">6</td>
+						<td id="jug-9" width="10%">Lat</td>
+						<td id="jug-9" width="10%">Prof.</td>
+						<td id="jug-9" width="10%">OK</td>
+						<td id="jug-9" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-10" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-10" align="center" width = "100%">
+					<tr>
+						<td id="jug-10" width="5%">10</td>
+						<td id="jug-10" width="15%"><img id="jug-10" src="iconoPersona.jpg"></td>
+						<td id="jug-10" width="30%" style="text-align: left;"><b>Marin, J.</b></td>
+						<td id="jug-10" width="10%">15</td>
+						<td id="jug-10" width="10%">Lat</td>
+						<td id="jug-10" width="10%">Prof.</td>
+						<td id="jug-10" width="10%">OK</td>
+						<td id="jug-10" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-11" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-11" align="center" width = "100%">
+					<tr>
+						<td id="jug-11" width="5%">11</td>
+						<td id="jug-11" width="15%"><img id="jug-11" src="iconoPersona.jpg"></td>
+						<td id="jug-11" width="30%" style="text-align: left;"><b>Gomez, H.</b></td>
+						<td id="jug-11" width="10%">22</td>
+						<td id="jug-11" width="10%">Lat</td>
+						<td id="jug-11" width="10%">Prof.</td>
+						<td id="jug-11" width="10%">OK</td>
+						<td id="jug-11" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-12" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-12" align="center" width = "100%">
+					<tr>
+						<td id="jug-12" width="5%">12</td>
+						<td id="jug-12" width="15%"><img id="jug-12" src="iconoPersona.jpg"></td>
+						<td id="jug-12" width="30%" style="text-align: left;"><b>Alonso, T.</b></td>
+						<td id="jug-12" width="10%">5</td>
+						<td id="jug-12" width="10%">Vol</td>
+						<td id="jug-12" width="10%">Prof.</td>
+						<td id="jug-12" width="10%">OK</td>
+						<td id="jug-12" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-13" class="example-draggable" style="background-color: #FFCC00;" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-13" align="center" width = "100%">
+					<tr>
+						<td id="jug-13" width="5%">13</td>
+						<td id="jug-13" width="15%"><img id="jug-13" src="iconoPersona.jpg"></td>
+						<td id="jug-13" width="30%" style="text-align: left;"><b>Erazo, L.</b></td>
+						<td id="jug-13" width="10%">8</td>
+						<td id="jug-13" width="10%">Vol</td>
+						<td id="jug-13" width="10%">Prof.</td>
+						<td id="jug-13" width="10%">SA</td>
+						<td id="jug-13" width="10%">60</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-14" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-14" align="center" width = "100%">
+					<tr>
+						<td id="jug-14" width="5%">14</td>
+						<td id="jug-14" width="15%"><img id="jug-14" src="iconoPersona.jpg"></td>
+						<td id="jug-14" width="30%" style="text-align: left;"><b>Polino, R.</b></td>
+						<td id="jug-14" width="10%">19</td>
+						<td id="jug-14" width="10%">Zag</td>
+						<td id="jug-14" width="10%">Prof.</td>
+						<td id="jug-14" width="10%">OK</td>
+						<td id="jug-14" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-15" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-15" align="center" width = "100%">
+					<tr>
+						<td id="jug-15" width="5%">15</td>
+						<td id="jug-15" width="15%"><img id="jug-15" src="iconoPersona.jpg"></td>
+						<td id="jug-15" width="30%" style="text-align: left;"><b>Robira, S.</b></td>
+						<td id="jug-15" width="10%">16</td>
+						<td id="jug-15" width="10%">Vol</td>
+						<td id="jug-15" width="10%">Prof.</td>
+						<td id="jug-15" width="10%">OK</td>
+						<td id="jug-15" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-16" class="example-draggable" style="background-color: #FFCC00;" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-16" align="center" width = "100%">
+					<tr>
+						<td id="jug-16" width="5%">16</td>
+						<td id="jug-16" width="15%"><img id="jug-16" src="iconoPersona.jpg"></td>
+						<td id="jug-16" width="30%" style="text-align: left;"><b>Torres, R.</b></td>
+						<td id="jug-16" width="10%">22</td>
+						<td id="jug-16" width="10%">Vol</td>
+						<td id="jug-16" width="10%">Prof.</td>
+						<td id="jug-16" width="10%">SA</td>
+						<td id="jug-16" width="10%">60</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-17" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-17" align="center" width = "100%">
+					<tr>
+						<td id="jug-17" width="5%">17</td>
+						<td id="jug-17" width="15%"><img id="jug-17" src="iconoPersona.jpg"></td>
+						<td id="jug-17" width="30%" style="text-align: left;"><b>Suarez, O.</b></td>
+						<td id="jug-17" width="10%">23</td>
+						<td id="jug-17" width="10%">Vol</td>
+						<td id="jug-17" width="10%">Prof.</td>
+						<td id="jug-17" width="10%">OK</td>
+						<td id="jug-17" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-18" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-18" align="center" width = "100%">
+					<tr>
+						<td id="jug-18" width="5%">18</td>
+						<td id="jug-18" width="15%"><img id="jug-18" src="iconoPersona.jpg"></td>
+						<td id="jug-18" width="30%" style="text-align: left;"><b>Paganini, R.</b></td>
+						<td id="jug-18" width="10%">7</td>
+						<td id="jug-18" width="10%">Ext</td>
+						<td id="jug-18" width="10%">Prof.</td>
+						<td id="jug-18" width="10%">OK</td>
+						<td id="jug-18" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-19" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-19" align="center" width = "100%">
+					<tr>
+						<td id="jug-19" width="5%">19</td>
+						<td id="jug-19" width="15%"><img id="jug-19" src="iconoPersona.jpg"></td>
+						<td id="jug-19" width="30%" style="text-align: left;"><b>Alvarez, R.</b></td>
+						<td id="jug-19" width="10%">11</td>
+						<td id="jug-19" width="10%">Ext</td>
+						<td id="jug-19" width="10%">Prof.</td>
+						<td id="jug-19" width="10%">OK</td>
+						<td id="jug-19" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-20" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-20" align="center" width = "100%">
+					<tr>
+						<td id="jug-20" width="5%">20</td>
+						<td id="jug-20" width="15%"><img id="jug-20" src="iconoPersona.jpg"></td>
+						<td id="jug-20" width="30%" style="text-align: left;"><b>Zurito, D.</b></td>
+						<td id="jug-20" width="10%">9</td>
+						<td id="jug-20" width="10%">Del</td>
+						<td id="jug-20" width="10%">Prof.</td>
+						<td id="jug-20" width="10%">OK</td>
+						<td id="jug-20" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-21" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-21" align="center" width = "100%">
+					<tr>
+						<td id="jug-21" width="5%">21</td>
+						<td id="jug-21" width="15%"><img id="jug-21" src="iconoPersona.jpg"></td>
+						<td id="jug-21" width="30%" style="text-align: left;"><b>Reyes, L.</b></td>
+						<td id="jug-21" width="10%">10</td>
+						<td id="jug-21" width="10%">Del</td>
+						<td id="jug-21" width="10%">Prof.</td>
+						<td id="jug-21" width="10%">OK</td>
+						<td id="jug-21" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-22" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-22" align="center" width = "100%">
+					<tr>
+						<td id="jug-22" width="5%">22</td>
+						<td id="jug-22" width="15%"><img id="jug-22" src="iconoPersona.jpg"></td>
+						<td id="jug-22" width="30%" style="text-align: left;"><b>Vidal, E.</b></td>
+						<td id="jug-22" width="10%">18</td>
+						<td id="jug-22" width="10%">Del</td>
+						<td id="jug-22" width="10%">Prof.</td>
+						<td id="jug-22" width="10%">OK</td>
+						<td id="jug-22" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-23" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-23" align="center" width = "100%">
+					<tr>
+						<td id="jug-23" width="5%">23</td>
+						<td id="jug-23" width="15%"><img id="jug-23" src="iconoPersona.jpg"></td>
+						<td id="jug-23" width="30%" style="text-align: left;"><b>Hernandez, L.</b></td>
+						<td id="jug-23" width="10%">25</td>
+						<td id="jug-23" width="10%">Del</td>
+						<td id="jug-23" width="10%">Juv.</td>
+						<td id="jug-23" width="10%">OK</td>
+						<td id="jug-23" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-24" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-24" align="center" width = "100%">
+					<tr>
+						<td id="jug-24" width="5%">24</td>
+						<td id="jug-24" width="15%"><img id="jug-24" src="iconoPersona.jpg"></td>
+						<td id="jug-24" width="30%" style="text-align: left;"><b>Martinez, M.</b></td>
+						<td id="jug-24" width="10%">24</td>
+						<td id="jug-24" width="10%">Del</td>
+						<td id="jug-24" width="10%">Prof.</td>
+						<td id="jug-24" width="10%">OK</td>
+						<td id="jug-24" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-25" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-25" align="center" width = "100%">
+					<tr>
+						<td id="jug-25" width="5%">25</td>
+						<td id="jug-25" width="15%"><img id="jug-25" src="iconoPersona.jpg"></td>
+						<td id="jug-25" width="30%" style="text-align: left;"><b>Gonzalez, E.</b></td>
+						<td id="jug-25" width="10%">17</td>
+						<td id="jug-25" width="10%">Ext</td>
+						<td id="jug-25" width="10%">Prof.</td>
+						<td id="jug-25" width="10%">OK</td>
+						<td id="jug-25" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-26" class="example-draggable" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-26" align="center" width = "100%">
+					<tr>
+						<td id="jug-26" width="5%">26</td>
+						<td id="jug-26" width="15%"><img id="jug-26" src="iconoPersona.jpg"></td>
+						<td id="jug-26" width="30%" style="text-align: left;"><b>Perez, F.</b></td>
+						<td id="jug-26" width="10%">18</td>
+						<td id="jug-26" width="10%">Ext</td>
+						<td id="jug-26" width="10%">Juv.</td>
+						<td id="jug-26" width="10%">OK</td>
+						<td id="jug-26" width="10%">128</td>
+					</tr>
+				</table>
+			</div>
+			<div id="jug-27" class="example-draggable" style="background-color: #99CCFF;" draggable="true" ondragstart="onDragStart(event);">
+				<table id="jug-27" align="center" width = "100%">
+					<tr>
+						<td id="jug-27" width="5%">27</td>
+						<td id="jug-27" width="15%"><img id="jug-27" src="iconoPersona.jpg"></td>
+						<td id="jug-27" width="30%" style="text-align: left;"><b>Mautone, F.</b></td>
+						<td id="jug-27" width="10%">26</td>
+						<td id="jug-27" width="10%">Lat</td>
+						<td id="jug-27" width="10%">Juv.</td>
+						<td id="jug-27" width="10%">AD</td>
+						<td id="jug-27" width="10%">0</td>
+					</tr>
+				</table>
+			</div>
+
+			<br>
+				<center><label style="color: grey; font-family: sans-serif; font-size: 12px;" id = "errorAsignar"></label></center>
+
+		</div>
+
+		<div class="example-dropzone">
+			<div class="example-origin">
+				<div class="header">
+					SESION DE ENTRENAMIENTO
+				</div>
+				<div id="en1" class="example-draggable2" ondragover="onDragOver(event);" ondrop="onDrop(event);">	
+							<div class="row mb-1 font-weight-bold font-italic">
+								<div class="mr-2">1</div>
+								<div class="mr-2">Movilidad + Coordinacion Mixta</div>
+								<div>Ej. 051</div>
+							</div>
+							<div class="row d-flex justify-content-between">
+								<table class="table-sm table-bordered">
+									<thead>
+										<th scope="col">Espacio</th>
+										<th scope="col">Tiempo</th>
+										<th scope="col">Repet.</th>
+										<th scope="col">Desc.R</th>
+										<th scope="col">Series</th>
+										<th scope="col">Desc.S</th>
+										<th scope="col">T.Total</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>L40 x A25</td>
+											<td class="text-right">30''</td>
+											<td class="text-right">12</td>
+											<td class="text-right">10''</td>
+											<td class="text-right">3</td>
+											<td class="text-right">2'</td>
+											<td class="text-right">28'</td>
+										</tr>
+									</tbody>         
+								</table>
+								<button type="button" class="btn btn-outline-success">Finalizada</button>
+							</div>
+						 	<!-- <div class="card-body">
+								<p>Movilidad Articular + Circuito coordinativo en una estacion + Desplazamientos con y sin balon</p>
+							</div>  -->
+							<br>
+							<div class="container">
+								<div class="row">
+									<img src="./img/Entrenamiento 1-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+									<img src="./img/Entrenamiento 1-2.PNG" class="card-img-bottom col-sm-6" alt="...">
+									
+								</div>
+							</div>
+						<br>
+
+				</div>
+				<div id="en2" class="example-draggable2" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+						<div class="row mb-1 font-weight-bold font-italic">
+							<div class=mr-2>2A</div>
+							<div class=mr-2>Esp.Red. con Reconversiones </div>
+							<div>Ej. 089</div>
+						</div>
+						<div class="row d-flex justify-content-between">
+							<table class="table-sm table-bordered">
+								<thead>
+									<th scope="col">Espacio</th>
+									<th scope="col">Tiempo</th>
+									<th scope="col">Repet.</th>
+									<th scope="col">Desc.R</th>
+									<th scope="col">Series</th>
+									<th scope="col">Desc.S</th>
+									<th scope="col">T.Total</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>L40 x A25</td>
+										<td class="text-right">3'</td>
+										<td class="text-right">3</td>
+										<td class="text-right">1''</td>
+										<td class="text-right">3</td>
+										<td class="text-right">2'</td>
+										<td class="text-right">37'</td>
+									</tr>
+								</tbody>         
+							</table>
+							<button type="button" class="btn btn-outline-success">Finalizada</button>
+						</div>
+
+					 	<!-- <div class="card-body">
+						 <p>Esp.Red. de posesion con 4 Jug + 4 Apoyos. Se intenta conseguir jugar con los 4 apoyos para lograr 1 Punto y continuar con la posesion para seguir sumando. Si el Eq en recuperacion logra quitar, se invierten los roles. Al finalizar el bloque, un Eq intercambia con el que jugaba de Apoyo.</p>
+						</div>  -->
+					<br>
+					<div class="container">
+						<div class="row">
+							<img src="./img/Entrenamiento 2-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+						</div>
+					</div>
+					<br>
+				</div>
+				<div id="en3" class="example-draggable2" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+						<div class="row mb-1 font-weight-bold font-italic">
+							<div class=mr-2>2B</div>
+							<div class=mr-2>Juego Reducido c/transiciones</div>
+							<div>Ej. 115</div>
+						</div>
+						<div class="row d-flex justify-content-between">
+							<table class="table-sm table-bordered">
+								<thead>
+									<th scope="col">Espacio</th>
+									<th scope="col">Tiempo</th>
+									<th scope="col">Repet.</th>
+									<th scope="col">Desc.R</th>
+									<th scope="col">Series</th>
+									<th scope="col">Desc.S</th>
+									<th scope="col">T.Total</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>L40 x A25</td>
+										<td class="text-right">7'</td>
+										<td class="text-right">2</td>
+										<td class="text-right">2'</td>
+										<td class="text-right">2</td>
+										<td class="text-right">5'</td>
+										<td class="text-right">37'</td>
+									</tr>
+								</tbody>         
+							</table>
+							<button type="button" class="btn btn-outline-success">Finalizada</button>
+						</div>
+
+					
+					 <!-- <div class="card-body">
+						 <p>Dos equipos distribuidos con 4 jug por dentro,2 por afuera y Golero. Inicia un Eq con posecion en la zona donde tienen los Ext, con el Obj de finalizar en el arco. Si el Eq contrario recupera, intenta realizar Trans. Rapida buscando apoyo con un Jug Ext de su Eq, mientras que el otro Ext corre al fondo para recibir y Continuar</p>
+					</div>  -->
+					<br>
+					<div class="container">
+						<div class="row">
+							<img src="./img/Entrenamiento 3-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+						</div>
+					</div>
+					<br>
+				</div>
+				<div id="en4" class="example-draggable2" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+						<div class="row mb-1 font-weight-bold font-italic">
+							<div class=mr-2>3</div>
+							<div class=mr-2>Juego Condicionado c/transiciones </div>
+							<div>Ej. 100</div>
+						</div>
+						<div class="row d-flex justify-content-between">
+							<table class="table-sm table-bordered">
+								<thead>
+									<th scope="col">Espacio</th>
+									<th scope="col">Tiempo</th>
+									<th scope="col">Repet.</th>
+									<th scope="col">Desc.R</th>
+									<th scope="col">Series</th>
+									<th scope="col">Desc.S</th>
+									<th scope="col">T.Total</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>L40 x A25</td>
+										<td class="text-right">5'</td>
+										<td class="text-right">4</td>
+										<td class="text-right">2'</td>
+										<td class="text-right">1</td>
+										<td class="text-right">0</td>
+										<td class="text-right">26'</td>
+									</tr>
+								</tbody>         
+							</table>
+							<button type="button" class="btn btn-outline-success">Finalizada</button>
+						</div>
+
+					<!-- <div class="card-body">
+						<p>Un equipo de 10 jug se dispone en ataque combinativo, mientras que el otro equipo defiende el Arco con 8 jug y Golero. El Eq en situacion defensiva, al momento de recuperar el balon intenta una Trans. OF Rapida buscando transitar por uno de los dos Arcos exteriores</p> 
+					</div>  -->
+					<br>
+					<div class="container">
+						<div class="row">
+							<img src="./img/Entrenamiento 4-1.PNG" class="card-img-bottom col-sm-6" alt="...">
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+ 
+
+</body>
+</html>

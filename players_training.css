@@ -1,0 +1,44 @@
+#plantel thead{
+    text-align: center;
+}
+
+#plantel tbody tr td:nth-of-type(1), td:nth-of-type(2), tr td:nth-of-type(3), td:nth-of-type(4){
+    text-align: center;
+}
+
+#plantel tbody tr td:nth-of-type(5){
+    text-align: right;
+}
+
+#plantel tbody tr th{
+    text-align: right;
+}
+
+#plantel tbody tr td:nth-of-type(4){
+    background-color: rgb(148, 219, 166);
+}
+
+#plantel tbody tr:nth-of-type(4) td:nth-of-type(4){
+    background-color: rgb(255, 199, 94);
+}
+
+#plantel tbody tr:nth-of-type(13) td:nth-of-type(4){
+    background-color: rgb(255, 199, 94);
+}
+
+#plantel tbody tr:nth-of-type(16) td:nth-of-type(4){
+    background-color: rgb(255, 199, 94);
+}
+
+#plantel tbody tr:nth-of-type(5) td:nth-of-type(4){
+    background-color:rgb(250, 112, 112);
+}
+
+#plantel tbody tr:nth-of-type(6) td:nth-of-type(4){
+    background-color:rgb(245, 245, 120);
+}
+
+#plantel tbody tr:nth-of-type(27) td:nth-of-type(4){
+    background-color: rgb(162, 215, 233);
+}
+
